@@ -9,8 +9,11 @@ angular.module('someJamAppApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        templateUrl: 'partials/title',
+        controller: 'TitleCtrl'
+      }).when('/login', {
+        templateUrl: 'partials/login',
+        controller: 'LoginCtrl'
       })
       .otherwise({
         redirectTo: '/'

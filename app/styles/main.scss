@@ -14,3 +14,64 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+
+.header {
+	h1 {
+		text-transform:uppercase;
+		font-weight: bold;
+	}
+}
+
+
+.search {
+	input {
+		float: left;
+		width: 80%;
+		font-size: 2em;
+		margin-right: 2%;
+	}
+
+	.search-button {
+		width: 18%;
+	}
+
+	.help-block {
+		float: left;
+	}
+
+}
+
+.topInterests {
+
+	thead th {
+			font-size: 1.2em;
+			font-weight: bold;
+	}
+
+	.registerButton {
+		margin-left:auto;
+		margin-right:auto;
+		width: 20%;
+
+		.btn {
+			margin-top: 1em;
+		}
+	}
+}
+
+.login {
+	width: 50%;
+	margin-left:auto;
+	margin-right:auto;
+	label {
+		width: 20%;
+		margin-top: 1em;
+	}
+	input {
+		width: 80%;
+	}
+	button {
+		margin-top: 1em;
+	}
+}
