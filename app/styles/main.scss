@@ -78,6 +78,19 @@ body {
 }
 
 .interests {
+
+	.search-box {
+		float: left;
+		width: 90%;
+		font-size: 1.30em;
+		margin-right: 2%;
+	}
+
+	.search-button {
+		width: 8%;
+	}
+
+
 	.interest {
 		.name {
 			margin-bottom: 0;
@@ -92,6 +105,14 @@ body {
 				border-color: #B5B5B5;
 				padding: 0.25em;
 				margin: 1em;
+				.name {
+					text-decoration:underline;
+					font-size: 1.32em;
+				}
+
+				&:hover {
+					background-color: #B5B5B5;
+				}
 			}
 
 		}
@@ -99,5 +120,21 @@ body {
 		border-bottom-style: dashed;
 		border-bottom-width: 1px;
 		border-bottom-color: #B5B5B5;
+	}
+
+	.suggestion {
+		background-color: #B8F595 !important;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		.info {
+			padding-left: 2.5em;
+
+			border-style: none;
+		}
+
+		border-style: dashed;
+		border-width: 1px;
+		border-color: #7BB858;
+
 	}
 }

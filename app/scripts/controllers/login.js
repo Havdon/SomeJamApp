@@ -16,7 +16,6 @@ angular.module('someJamAppApp')
 	    		UserSession.setId(userData.id);
           $http.get('/api/user/id/' + userData.id).success(function(data) {
               UserSession.setDataObject(data);
-              $log.log("LocalUser.id = " + UserSession.id);
               $location.path("user/interest");
           });
           
