@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3>Event</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputInterest">Interest</label>
+            <div class="controls">
+                <input type="text" id="inputInterest" placeholder="Interest" ng-model="event.interest">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputDescription">Description</label>
+            <div class="controls">
+                <input type="text" id="inputDescription" placeholder="Description" ng-model="event.description">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputLocation">Location</label>
+            <div class="controls">
+                <input type="text" id="inputLocation" placeholder="Location" ng-model="event.location">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputTime">Time</label>
+            <div class="controls">
+                <input type="text" id="inputTime" placeholder="Time" ng-model="event.time">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="event.private"> Private
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn" ng-click="cancel()">Cancel</button>
+</div>

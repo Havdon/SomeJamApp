@@ -1,0 +1,8 @@
+<div ng-repeat-start="event in eventList">
+{{event.interest}} : {{event.description}}</br>
+Location: {{event.location}}, Time: {{event.time}}</br>
+People registered for event: {{event.registered}}
+People may be interested: {{event.interested}}
+<button ng-click="do()">Join</button> <button ng-click="do()">Hide</button>
+</br>
+</div>
