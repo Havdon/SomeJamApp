@@ -12,7 +12,7 @@ angular.module('someJamAppApp')
               $http({ 
                   method: 'POST',
                   url: '/api/user/attend/event',
-                  data: {id:UserSession.id, eventId:eventId}
+                  data: {userId:UserSession.id, eventId:eventId}
               }).success(function(success) {
                   $scope.joinButtonStatus = 'Unjoin';
               });

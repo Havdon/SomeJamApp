@@ -49,7 +49,7 @@ ADD NEW INTEREST TO USER:
 MAKE USER ATTEND EVENT:
 	[POST] '/api/user/attend/event'
 		Variables:
-			'id' : the id of the user
+			'userId' : the id of the user
 			'eventId' : the id of the event you want the user to attend
 		Returns a JSON object with the variable 'success' set to true or false. If false, a 'error' field is provided.
 
