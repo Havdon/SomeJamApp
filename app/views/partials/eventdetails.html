@@ -1,9 +1,14 @@
 <div class="jumbotron" ng-controller="EventdetailsCtrl">
 
-<h1>{{event.name}}</h1> : {{event.description}}</br>
-Location: Helsinki, Time: {{event.date}}</br>
+<h1>{{event.name}}</h1>
+{{event.description}}</br>
+Location: Helsinki<br/>
+Time: {{event.date}}</br>
 People registered for the event: {{participants}}<br/>
 People may be interested: {{event.interested}}
 {{interest}}
+
+<br/>
+<button class="btn btn-primary" ng-click="joinEvent(event._id)">{{joinButtonStatus}}</button>
 
 </div>
