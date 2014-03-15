@@ -6,7 +6,7 @@
 		<h4 class="name">{{interest.name}}</h4>
 		<div class="info">
 			<small>{{interest.userCount}} other people are interested.</small>
-			<div class="event" ng-repeat="event in interest.eventObjects">
+			<div class="event" ng-click="goToDetails(event._id)" ng-repeat="event in interest.eventObjects" >
 				<strong>{{event.name}}</strong>
 				<br/>
 				<span class="help-block">{{event.date}}</span>

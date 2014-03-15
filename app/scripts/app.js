@@ -20,8 +20,10 @@ angular.module('someJamAppApp', [
     }).when('/user/interest', {
         templateUrl: 'partials/userinterest',
         controller: 'UserinterestCtrl'
-      })
-      .otherwise({
+      }).when('/user/eventdetails/:id', {
+        templateUrl: 'partials/eventdetails',
+        controller: 'EventdetailsCtrl'
+    }).otherwise({
         redirectTo: '/'
       });
       

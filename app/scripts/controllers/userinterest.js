@@ -3,10 +3,15 @@
 angular.module('someJamAppApp')
 .controller('UserinterestCtrl', function ($scope, $http, $log, $location, UserSession) {
 	if(UserSession.id == -1 || UserSession.data == undefined || UserSession.data.interests == undefined) { 
+        
 		$location.path("login");
 	}
 
 	$scope.interests = [];
+    $scope.goToDetails = function(id) {
+        //UserSession.data.eventId = id;
+        $location.path("user/eventdetails/"+id);
+    }
 
 	$log.log(UserSession.data);
 
