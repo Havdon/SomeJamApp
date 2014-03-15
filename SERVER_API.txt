@@ -54,6 +54,15 @@ MAKE USER ATTEND EVENT:
 		Returns a JSON object with the variable 'success' set to true or false. If false, a 'error' field is provided.
 
 
+VALIDATE USERNAME AND PASSWORD (LOGIN):
+	[POST] '/api/user/validate'
+		Varialbes:
+			'username' : the username of the user
+			'password' : the password of the user
+		Returns JSON object with either success set to true of false.
+
+
+
 *******************
 *** INTERST API ***
 *******************
@@ -81,6 +90,10 @@ GET NUMBER OF USERS INTERESTED IN THIS:
 GET ALL INTERESTS:
 	[GET] '/api/interest/id/all'
 		Returns a JSON array of all the data of all the interests in the database.
+
+SEARCH FOR INTERESTS BY NAME:
+	[GET] '/api/interest/search/:string'
+		Returns a JSON array with all matches to given string 
 
 CREATE NEW INTERERST:
 	[POST] '/api/interest/new'
