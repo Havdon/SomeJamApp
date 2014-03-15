@@ -5,7 +5,7 @@ angular.module('someJamAppApp')
 
 	$scope.menu = [
 		{
-			title: "INTERSTS",
+			title: "INTERESTS",
 			link: "#/user/interest"
 		}, 
 		{
