@@ -1,5 +1,7 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+$link-color: #f7931e; /*orange*/
+
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .browsehappy {
@@ -14,10 +16,13 @@ body {
     //padding-top: 20px;
     //padding-bottom: 20px;
 	height: 100%;
+	font-family: 'Source Sans Pro', sans-serif !important;
 }
 
 html {
 	height: 100%;
+
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container  {
@@ -27,6 +32,9 @@ html {
     padding-right: 0px;
 }
 
+
+
+
 .front-logo {
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,17 +42,68 @@ html {
     min-height: 100%;
     background-repeat:no-repeat;
 	background-position: center center;
+
+
+	.loginDiv {
+		float: right;
+		color: white;
+		padding: 10px;
+		.btn {
+			height: 2em;
+			line-height: 2em;
+			padding: 0px 5px;
+		}
+		.search-query {
+			color: black;
+			padding-right: 10px;
+			padding-left: 10px ;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			margin-bottom: 0;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			border: none;
+
+	
+
+			&:focus {
+				outline: none;
+			}
+		}
+		label {
+			padding-right: 1em;
+			
+		}
+		
+		.forgot {
+			padding-left: 1em;
+			padding-right: 0em;
+			font-size: 10px;
+		}
+
+	}
 }
 
 
 .header {
     text-align: center;
     color: #FFFFFF;
-	h1 {
-		text-transform:uppercase;
-		font-weight: bold;
-        color: #f7931e; /*orange*/
-	}
+	font-size: 1.5em;
+
+		h1 {
+			font-weight: bold;
+	        color: #f7931e; /*orange*/
+			font-size: 4em;
+
+			a:hover {
+				text-decoration: none;
+				border-color: none;
+		    	box-shadow: none;
+			}
+		}
+
+
     
     padding-top: 200px;
     
@@ -58,14 +117,48 @@ html {
 
 .search {
     background-color: transparent;
-    max-width: 75%;
+    width: 60%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+
 	input {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
 		float: left;
 		width: 80%;
 		font-size: 2em;
 		margin-right: 2%;
+			border: none;
+
+
+	}
+
+	.btn {
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		font-weight: bold;
+			border: none;
+	}
+
+	.search-query {
+		padding-right: 14px;
+		padding-right: 4px \9;
+		padding-left: 14px;
+		padding-left: 4px \9;
+		margin-bottom: 0;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+
+		&:focus {
+			outline: none;
+		    border-color: #9ecaed;
+		    box-shadow: 0 0 10px #9ecaed;
+
+		}
 	}
 
 	.search-button {
@@ -79,15 +172,83 @@ html {
 }
 
 .interestContainer {
-	padding-top: 10%;
     min-height: 100%;
+    height: 100%;
+
+    .upper {
+    	padding: 2em;
+    	width: 100%;
+    	background-color: white;
+    	strong {
+    		font-weight: 900;
+    	}
+    	h2 {
+    		font-size: 3em;
+    	}
+    	h1 {
+    		font-size: 5em;
+    	}
+    }
+    .lower {
+    	width: 100%;
+    	height: 75%;
+    	background-color: #D7E0DC;
+
+    	.interestContainer {
+    		width: 30%;
+    		margin: 0 auto;
+	    	.interestDiv {
+	    		height:3.5em;
+	    		.name {
+	    			font-size: 3.5em;
+	    			float:left;
+	    			font-weight: 300;
+	    		}
+	    		.interestedIn {
+		    		line-height: 2.3em;
+		    		float: right;
+		    		padding-top: 1.4em;
+		    		.count {
+		    			float: left;
+		    			margin-right: 0.25em;
+		    			font-size: 1.5em;
+		    			line-height: 1.5em;
+		    			height: 1.5em;
+		    			width: 1.5em;
+		    			background-color: #f7931e; /*orange*/
+		    			border-radius: 50%;
+		    		}
+		    	}
+	    		clear:both;
+	    		
+	    	}
+
+	    	.registerButton {
+    			padding-top: 2em;
+				width: 50%;
+				margin: 0 auto;
+	    		.signup {
+	    			float:left;
+	    			border: none;
+					font-weight: bold;
+	    		}
+
+	    		.loginBut {
+	    			float: right;
+	    			border: none;
+					font-weight: bold;
+	    		}
+	    	}
+	    }
+    }
 }
 
 .topInterests {
-    
-    width:400px;
-
     margin: 0 auto;
+    background-color: #D7E0DC;
+
+    
+
 
 	thead th {
 			font-size: 1.2em;

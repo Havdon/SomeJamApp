@@ -2,7 +2,7 @@
 
 angular.module('someJamAppApp')
   .controller('EventdetailsCtrl', function ($scope, $http, $routeParams) {
-      /*
+      
       $scope.participants = "";
     
       $http.get('/api/event/id/'+$routeParams.id).success(function(data) {
@@ -26,7 +26,7 @@ angular.module('someJamAppApp')
           }
                                                                
             
-      });*/
+      });
       
         
         
