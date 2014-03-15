@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('someJamAppApp')
-  .controller('LoginCtrl', function ($scope, $http, $log) {
+  .controller('LoginCtrl', function ($scope, $http, $log, UserSession) {
   	$scope.validateUser = function() {
   		$http({
             method : 'POST',
@@ -9,7 +9,8 @@ angular.module('someJamAppApp')
             data : {username:$scope.username, password:$scope.password}
         }).success(function(userData) {
 	    	if(userData.valid === true && userData.id !== undefined) {
-	    		$log.log("Success!");
+	    		LocalUser.setId(userData.id);
+	    		$log.log("LocalUser.id = " + LocalUser.id);
 	    	}
 	    });
   	};
