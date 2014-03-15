@@ -1,0 +1,132 @@
+SERVER API DOCUMENTATION
+
+
+Here are all the currently implemented server api calls.
+They have almost no input validation. 
+NOTE: They do not check for existance of ids, they assume the client knows the exist.
+
+The ':id' in some api paths is the id of the specific object that you want to access.
+
+****************
+*** USER API ***
+****************
+
+GET USER:
+	[GET] '/api/user/id/:id'
+		Returns a JSON object containing all user info:
+			'username': String,
+			'password': String,
+			'interests': Array of all the interests the user has. Note, this is an array of ids.
+			'events': Array of all the events the user is attending. Note, this is an array of ids.
+
+GET USER INTEREST:
+	[GET] '/api/user/id/:id/interests'
+		Returns a JSON object containing only the 'interests' variable
+
+GET USER EVENTS:
+	[GET] '/api/user/id/:id/events'
+		Returns a JSON object containing only the 'events' variable
+
+GET USER USERNAME FROM ID:
+	[GET] '/api/user/id/:id/username'
+		Returns a JSON object containing only the 'username' variable
+
+
+CREATE NEW USER:
+	[POST] '/api/user/new'
+		Variables:
+			'username' : the username of the user
+			'password' : the password of the user
+		Returns a JSON object containing all info of the user. use this to get access to the _id of the created object.
+
+ADD NEW INTEREST TO USER:
+	[POST] '/api/user/add/interest'
+		Variables:
+			'id' : the id of the user
+			'interestId' : the id of the interest you want to add to the user
+		Returns a JSON object with the variable 'success' set to true or false. If false, a 'error' field is provided.
+
+MAKE USER ATTEND EVENT:
+	[POST] '/api/user/attend/event'
+		Variables:
+			'id' : the id of the user
+			'eventId' : the id of the event you want the user to attend
+		Returns a JSON object with the variable 'success' set to true or false. If false, a 'error' field is provided.
+
+
+*******************
+*** INTERST API ***
+*******************
+
+GET INTEREST:
+	[GET] '/api/interest/id/:id'
+		Returns a JSON object containing all interest data:
+			'name': String, 
+			'userCount': Number of users who have this interest,
+			'events': Array of all events under this interest. Note, this is an array of ids.
+			'_id': The id of the object
+
+GET INTEREST NAME:
+	[GET] '/api/interest/id/:id/name'
+		Returns a JSON object containing only the 'name' field.
+
+GET EVENTS UNDER INTERERST:
+	[GET] '/api/interest/id/:id/events'
+		Returns a JSON object containing only the 'events' Array field.
+
+GET NUMBER OF USERS INTERESTED IN THIS:
+	[GET] '/api/interest/id/:id/usercount'
+		Returns a JSON object containing only the 'usercount' Array field.
+
+GET ALL INTERESTS:
+	[GET] '/api/interest/id/all'
+		Returns a JSON array of all the data of all the interests in the database.
+
+CREATE NEW INTERERST:
+	[POST] '/api/interest/new'
+		Variables:
+			'name' : The String name of the interest
+		Returns a JSON object containig all the interest data. Take the id from here for further access.
+
+
+
+*****************
+*** EVENT API ***
+*****************
+
+GET EVENT:
+	[GET] '/api/event/id/:id'
+		Returns a JSON object containing all event data:
+			'name': String, 
+			'date': String,
+			'description': String,
+			'interest': Id of the interest of the event
+			'users': Array of ids to all attending users.
+
+GET EVENT INTEREST:
+	[GET] '/api/event/id/:id/interest'
+		Returns a JSON object containing only the 'interest' field.
+
+GET EVENT NAME:
+	[GET] '/api/event/id/:id/name'
+		Returns a JSON object containing only the 'name' field.
+
+GET EVENT DESCRIPTION:
+	[GET] '/api/event/id/:id/description'
+		Returns a JSON object containing only the 'description' field.
+
+
+GET EVENT DATE:
+	[GET] '/api/event/id/:id/date'
+		Returns a JSON object containing only the 'date' field.
+
+
+GET ALL USERS ATTENDING EVENT:
+	[GET] '/api/event/id/:id/users'
+		Returns a JSON object containing only the 'users' field.
+
+GET ALL EVENTS:
+	[GET] '/api/event/all'
+		Returns a JSON array of all the data of all the events in the database.
+
+
