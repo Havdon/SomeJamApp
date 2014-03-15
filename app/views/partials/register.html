@@ -1,11 +1,12 @@
-<div class="jumbotron">
+<div class="jumbotron" ng-controller="RegisterCtrl">
     <h1>Register</h1>
     
     <form novalidate class="register-form">
-        <input type="text" id="username" placeholder="Username" ng-model="register.username" /><br />
-        <input type="text" id="password" placeholder="Password" ng-model="register.password" /><br />
-        <input type="text" id="password-again" placeholder="Password again" ng-model="register.password2" /><br />
+        <input type="text" id="username" placeholder="username" ng-model="username" /><br />
+        <input type="text" id="password" placeholder="password" ng-model="password" /><br />
+        <input type="text" id="password-again" placeholder="Password again" ng-model="password2" /><br />
         
-        <button ng-click="register()">Register</button>
+        <button ng-click="register()">Register {{test}}</button>
+        
     </form>
 </div>

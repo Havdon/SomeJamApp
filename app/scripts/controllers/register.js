@@ -2,7 +2,13 @@
 
 angular.module('someJamAppApp')
   .controller('RegisterCtrl', function ($scope, $http) {
-    $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+    
+      $scope.register = function() {
+            $http({
+                method: 'POST',
+                url: '/api/user/new',
+                data : {username:$scope.username, password:$scope.password}}).success(function(userData) {
+                
+            });
+      }
   });
