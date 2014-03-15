@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('someJamAppApp')
-  .controller('LoginCtrl', function ($scope, $http, $log, UserSession) {
+  .controller('LoginCtrl', function ($scope, $http, $location, $log, UserSession) {
+  	if(UserSession.id !== -1) { 
+  		$location.path("user/interest");
+  	}
+    
   	$scope.validateUser = function() {
   		$http({
             method : 'POST',
@@ -9,9 +13,19 @@ angular.module('someJamAppApp')
             data : {username:$scope.username, password:$scope.password}
         }).success(function(userData) {
 	    	if(userData.valid === true && userData.id !== undefined) {
-	    		LocalUser.setId(userData.id);
-	    		$log.log("LocalUser.id = " + LocalUser.id);
+	    		UserSession.setId(userData.id);
+          $http.get('/api/user/id/' + userData.id).success(function(data) {
+              UserSession.setDataObject(data);
+              $log.log("LocalUser.id = " + UserSession.id);
+              $location.path("user/interest");
+          });
+          
 	    	}
 	    });
   	};
+
+
+    $scope.username = "Username";
+    $scope.password = "password";
+    $scope.validateUser();
 });

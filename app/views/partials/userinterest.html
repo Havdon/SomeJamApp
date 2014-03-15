@@ -1,1 +1,16 @@
-<p>This is the UserInterest view.</p>
+
+<div ng-include="'partials/navbar'"></div>
+<div class="jumbotron interests">
+	<h2>Your interests</h2>
+	<div class="interest" ng-repeat="interest in interests">
+		<h4 class="name">{{interest.name}}</h4>
+		<div class="info">
+			<small>{{interest.userCount}} other people are interested.</small>
+			<div class="event" ng-repeat="event in interest.eventObjects">
+				<strong>{{event.name}}</strong>
+				<br/>
+				<span class="help-block">{{event.date}}</span>
+			</div>
+		<div>
+	</div>
+</div>

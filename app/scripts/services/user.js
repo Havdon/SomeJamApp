@@ -3,13 +3,13 @@
 angular.module('someJamAppApp')
   .service('UserSession', function User() {
   	this.id = -1;
-  	this.username = '';
+  	this.data = null;
   	this.setId = function(value) {
   		this.id = value;
   	}
 
-  	this.setUsername = function(value) {
-  		this.username = value;
+  	this.setDataObject = function(value) {
+  		this.data = value;
   	}
 
   	this.isValid = function() {
