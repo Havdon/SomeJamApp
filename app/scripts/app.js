@@ -14,6 +14,9 @@ angular.module('someJamAppApp', [
       }).when('/login', {
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
+      }).when('/user/interest', {
+        templateUrl: 'partials/userinterest',
+        controller: 'UserinterestCtrl'
       })
       .otherwise({
         redirectTo: '/'
