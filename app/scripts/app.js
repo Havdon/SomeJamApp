@@ -11,8 +11,10 @@ angular.module('someJamAppApp', [
       .when('/', {
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
-      })
-      .otherwise({
+      }).when('/register', {
+        templateUrl: 'partials/register',
+        controller: 'RegisterCtrl'
+      }).otherwise({
         redirectTo: '/'
       });
       
