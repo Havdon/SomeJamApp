@@ -14,7 +14,10 @@ angular.module('someJamAppApp', [
       }).when('/login', {
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
-      }).when('/user/interest', {
+      }).when('/register', {
+        templateUrl: 'partials/register',
+        controller: 'RegisterCtrl'
+    }).when('/user/interest', {
         templateUrl: 'partials/userinterest',
         controller: 'UserinterestCtrl'
       }).when('/user/meetups', {
@@ -23,8 +26,10 @@ angular.module('someJamAppApp', [
       }).when('/events/create/:id', {
         templateUrl: 'partials/createevent',
         controller: 'CreateeventCtrl'
-      })
-      .otherwise({
+      }).when('/user/eventdetails/:id', {
+        templateUrl: 'partials/eventdetails',
+        controller: 'EventdetailsCtrl'
+    }).otherwise({
         redirectTo: '/'
       });
       

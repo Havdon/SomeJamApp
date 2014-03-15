@@ -1,16 +1,25 @@
+<div class="front-logo">
 
+<div class="row header">
+        <a href="#/"><h1 class="text-center">Getogether</h1></a>
+        Find and gather with friends who share your passion.
+    </div>
 
 <div class="jumbotron search">
 	<form>
 		<fieldset>
-			<input type="text" placeholder="Helsinki, Finland">
+			<input type="text" placeholder="Type in your location...">
 			<button class="search-button btn btn-lg btn-primary btn-block" type="submit" ng-click="searchLocation()">Search</button>
 		</fieldset>
 		<span class="help-block">See what people are interested in your area</span>
 	</form>
 </div>
 
-<div class="jumbotron topInterests" ng-show="topInterests !== undefined">
+</div>
+
+<div class="interestContainer">
+
+<div class="jumbotron topInterests" id="results" ng-show="topInterests !== undefined">
 	<table class="table">
 		<thead>
 		<tr>
@@ -33,4 +42,6 @@
 			<button class="btn btn-lg btn-primary btn-block" type="button">Login</button>
 		</a>
 	</div>
+</div>
+
 </div>

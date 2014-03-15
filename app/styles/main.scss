@@ -11,20 +11,56 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    //padding-top: 20px;
+    //padding-bottom: 20px;
+	height: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+.container  {
+    width: 100%;
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.front-logo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url('../images/front-bg.jpg') ;
+    min-height: 100%;
+    background-repeat:no-repeat;
+	background-position: center center;
 }
 
 
 .header {
+    text-align: center;
+    color: #FFFFFF;
 	h1 {
 		text-transform:uppercase;
 		font-weight: bold;
+        color: #f7931e; /*orange*/
 	}
+    
+    padding-top: 200px;
+    
+    
+}
+
+.header.withTop{
+    padding-top: 10px;
 }
 
 
 .search {
+    background-color: transparent;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 	input {
 		float: left;
 		width: 80%;
@@ -42,7 +78,16 @@ body {
 
 }
 
+.interestContainer {
+	padding-top: 10%;
+    min-height: 100%;
+}
+
 .topInterests {
+    
+    width:400px;
+
+    margin: 0 auto;
 
 	thead th {
 			font-size: 1.2em;

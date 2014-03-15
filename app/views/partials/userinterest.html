@@ -15,7 +15,7 @@
 			<h4 class="name">{{searchInterest.name}}</h4>
 			<div class="info">
 				<small>{{searchInterest.userCount}} other people are interested.</small>
-				<a ng-repeat="event in eventObjects" href="#">
+				<a ng-repeat="event in eventObjects" href="#" ng-click="goToDetails(event._id)">
 					<div class="event" ng-hide="containsThisUser(event.users)">
 						<strong class="name">{{event.name}}</strong>
 						<br/>
@@ -41,7 +41,7 @@
 
 			<small>{{interest.userCount}} other people are interested.</small>
 
-			<a ng-repeat="event in interest.eventObjects" href="#/event/{{event._id}}">
+			<a ng-repeat="event in interest.eventObjects" href="#/user/eventdetails/{{event._id}}">
 				<div class="event" ng-hide="containsThisUser(event.users)">
 					<strong class="name">{{event.name}}</strong>
 					<br/>
@@ -55,6 +55,5 @@
 
 			
 		</div>
-		
 	</div>
 </div>
