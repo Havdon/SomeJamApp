@@ -31,8 +31,16 @@
 	</div>
 	<div class="interest" ng-repeat="interest in interests">
 		<h4 class="name">{{interest.name}}</h4>
+		<a ng-click="createNewEvent(interest._id)">
+			<button type="button" class="btn btn-success btn-sm  create-event-button pull-right">
+				<i class="glyphicon glyphicon-plus-sign"></i> Create Meetup
+			</button>
+		</a>
 		<div class="info">
+			
+
 			<small>{{interest.userCount}} other people are interested.</small>
+
 			<a ng-repeat="event in interest.eventObjects" href="#/event/{{event._id}}">
 				<div class="event" ng-hide="containsThisUser(event.users)">
 					<strong class="name">{{event.name}}</strong>
@@ -44,6 +52,9 @@
 					<strong>Users attending: </strong><small>{{event.users.length}}</small>
 				</div>
 			</a>
-		<div>
+
+			
+		</div>
+		
 	</div>
 </div>

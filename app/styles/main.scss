@@ -98,6 +98,7 @@ body {
 
 		.info {
 			padding-left: 2em;
+			padding-bottom: 1em;
 
 			.event {
 				border-style: solid;
@@ -113,6 +114,9 @@ body {
 				&:hover {
 					background-color: #B5B5B5;
 				}
+			}
+
+			.create-event-button {
 			}
 
 		}
@@ -136,5 +140,45 @@ body {
 		border-width: 1px;
 		border-color: #7BB858;
 
+	}
+}
+
+.meetups {
+	.meetup {
+		.event {
+			border-style: solid;
+			border-width: 1px;
+			border-color: #B5B5B5;
+			padding: 0.25em;
+			margin: 1em;
+			.name {
+				text-decoration:underline;
+				font-size: 1.32em;
+			}
+		}
+	}
+}
+
+
+.createEvent {
+	.control-group {
+
+		label {
+			display: block;
+		}
+
+		.input {
+			width: 100%;
+		}
+
+
+	}
+
+	.create {
+		float: left;
+	}
+
+	.cancel {
+		float: right;
 	}
 }

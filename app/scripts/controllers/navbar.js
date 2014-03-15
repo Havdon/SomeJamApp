@@ -10,7 +10,7 @@ angular.module('someJamAppApp')
 		}, 
 		{
 			title: "MEETUPS",
-			link: "#/user/interest"
+			link: "#/user/meetups"
 		}
 	];
 

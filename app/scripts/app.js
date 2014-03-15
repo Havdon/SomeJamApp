@@ -17,6 +17,12 @@ angular.module('someJamAppApp', [
       }).when('/user/interest', {
         templateUrl: 'partials/userinterest',
         controller: 'UserinterestCtrl'
+      }).when('/user/meetups', {
+        templateUrl: 'partials/meetups',
+        controller: 'MeetupsCtrl'
+      }).when('/events/create/:id', {
+        templateUrl: 'partials/createevent',
+        controller: 'CreateeventCtrl'
       })
       .otherwise({
         redirectTo: '/'

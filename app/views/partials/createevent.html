@@ -1,0 +1,31 @@
+
+<div ng-include="'partials/navbar'"></div>
+<div class="jumbotron createEvent">
+	<form class="form-horizontal">
+		<fieldset>
+    		<legend>Create new event:</legend>
+    		<div class="control-group">
+	    		<label>Name</label>
+				<input type="text" class="input" ng-model="name">
+			</div>
+			<div class="control-group">
+	    		<label>Date</label>
+				<input type="text" class="input" ng-model="date">
+			</div>
+			<div class="control-group">
+	    		<label>Interest</label>
+				<input type="text" class="input" ng-model="interestName" disabled>
+	    	</div>
+			<br/>
+			<div class="control-group">
+	    		<label>Description</label>
+	    		<textarea rows="10" class="input" ng-model="description"></textarea>
+	    	</div>
+			<button class="btn btn-lg btn-success create" type="submit" ng-click="createEvent()">Create</button>
+			<a href="#/user/interest">
+				<button class="btn btn-lg btn-inverse cancel" type="submit">Cancel</button>
+			</a>
+			
+		</fieldset>
+	</form>
+</div>

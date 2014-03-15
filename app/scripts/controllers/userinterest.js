@@ -86,5 +86,9 @@ angular.module('someJamAppApp')
 		    }
 	    }
 	}
+
+	$scope.createNewEvent = function(id) {
+		$location.path("/events/create/" + id);
+	}
 	
 });
