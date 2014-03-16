@@ -1,21 +1,74 @@
 
-<div ng-include="'partials/navbar'"></div>
-<div class="jumbotron interests">
-	<h2>Your interests</h2>
-	<form ng-submit="addInterest()">
-		<fieldset>
-			<input type="text" class="search-box" placeholder="Tennis, Chess, etc." ng-model="interestSearch" ng-change="searchChanged()">
-			<button type="submit" class="search-button btn btn-primary btn-sm">
-			  <i class="glyphicon glyphicon-plus-sign"></i> Add
-			</button>
-		</fieldset>
-	</form>
-	<div class="interest" ng-hide="(searchInterest.name === undefined || searchInterest.events.length !== eventObjects.length)">
-		<div class="interest suggestion">
-			<h4 class="name">{{searchInterest.name}}</h4>
+<div ng-include="'partials/imagehead'" class="imageHeadInclude"></div>
+
+<div class="main-container">
+	<div ng-include="'partials/navbar'"></div>
+	<div class="interests">
+		<div class="top">
+			<h2>You like...</h2>
+			<form ng-submit="addInterest()">
+				<fieldset>
+					<input type="text" class="search-box" placeholder="Tennis, Chess, etc." ng-model="interestSearch" ng-change="searchChanged()">
+					<button type="submit" class="search-button btn btn-success btn-sm">
+					  <i class="glyphicon glyphicon-plus-sign"></i> Add
+					</button>
+				</fieldset>
+			</form>
+		</div>
+		<div class="interest" ng-hide="(searchInterest.name === undefined || searchInterest.events.length !== eventObjects.length)">
+			<div class="interest suggestion">
+				<h4 class="name">{{searchInterest.name}}</h4>
+				<div class="info">
+					<small>{{searchInterest.userCount}} other people are interested.</small>
+					<a ng-repeat="event in eventObjects" href="#" ng-click="goToDetails(event._id)">
+						<div class="event" ng-hide="containsThisUser(event.users)">
+							<strong class="name">{{event.name}}</strong>
+							<br/>
+							<strong>Date: </strong><small>{{event.date}}</small>
+							<br/>
+							<strong>Description: </strong><small>{{event.description}}</small>
+							<br/>
+							<strong>Users attending: </strong><small>{{event.users.length}}</small>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="interest" ng-repeat="interest in interests" ng-class="{opened: (targetInterest === interest._id), notSelected: (targetInterest !== null && targetInterest !== interest._id) }" ng-click="interestClicked(interest)">
+			<h4 class="name">{{interest.name}}</h4>
+			<div class="count"><strong>{{interest.userCount}}</strong> liked it</div>
+			<div class="expanded" ng-hide="targetInterest !== interest._id"> 
+				<a ng-repeat="event in interest.eventObjects" href="#/user/eventdetails/{{event._id}}">
+					<div class="event" ng-hide="containsThisUser(event.users)">
+						<strong class="eventName">{{event.name}}</strong> More >>
+						<br/>
+						<div class="evetDate">{{event.date}}</div>
+					</div>
+				</a>
+
+				<div class="createDiv pull-right">
+					<div class="CreateOwn">
+						Can't find something you like? <br/>
+						<strong> Create your own get-together!</strong>
+						<a ng-click="createNewEvent(interest._id)">
+							<button type="button" class="btn btn-error btn-sm ">
+								<i class="glyphicon glyphicon-plus-sign"></i> Create
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- <a ng-click="createNewEvent(interest._id)">
+				<button type="button" class="btn btn-success btn-sm  create-event-button pull-right">
+					<i class="glyphicon glyphicon-plus-sign"></i> Create Meetup
+				</button>
+			</a>
 			<div class="info">
-				<small>{{searchInterest.userCount}} other people are interested.</small>
-				<a ng-repeat="event in eventObjects" href="#" ng-click="goToDetails(event._id)">
+				
+
+				<small>{{interest.userCount}} other people are interested.</small>
+
+				<a ng-repeat="event in interest.eventObjects" href="#/user/eventdetails/{{event._id}}">
 					<div class="event" ng-hide="containsThisUser(event.users)">
 						<strong class="name">{{event.name}}</strong>
 						<br/>
@@ -26,34 +79,9 @@
 						<strong>Users attending: </strong><small>{{event.users.length}}</small>
 					</div>
 				</a>
-			</div>
-		</div>
-	</div>
-	<div class="interest" ng-repeat="interest in interests">
-		<h4 class="name">{{interest.name}}</h4>
-		<a ng-click="createNewEvent(interest._id)">
-			<button type="button" class="btn btn-success btn-sm  create-event-button pull-right">
-				<i class="glyphicon glyphicon-plus-sign"></i> Create Meetup
-			</button>
-		</a>
-		<div class="info">
-			
 
-			<small>{{interest.userCount}} other people are interested.</small>
-
-			<a ng-repeat="event in interest.eventObjects" href="#/user/eventdetails/{{event._id}}">
-				<div class="event" ng-hide="containsThisUser(event.users)">
-					<strong class="name">{{event.name}}</strong>
-					<br/>
-					<strong>Date: </strong><small>{{event.date}}</small>
-					<br/>
-					<strong>Description: </strong><small>{{event.description}}</small>
-					<br/>
-					<strong>Users attending: </strong><small>{{event.users.length}}</small>
-				</div>
-			</a>
-
-			
+				
+			</div> -->
 		</div>
 	</div>
 </div>

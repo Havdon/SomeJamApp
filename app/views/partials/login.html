@@ -1,12 +1,16 @@
-<div class="jumbotron login">
-	<form class="form-horizontal">
-		<fieldset>
-    		<legend>Login:</legend>
-    		<label>Username</label>
-			<input type="text" ng-model="username">
-    		<label>Password</label>
-			<input type="password" ng-model="password">
-			<button class="btn btn-lg btn-primary" type="submit" ng-click="validateUser()">Login</button>
-		</fieldset>
-	</form>
+<div class="login-container">
+	<div class="row header">
+        <h1><a href="#/"  class="text-center">Getogether</a></h1>
+        Find and gather with friends who share your passion.
+    </div>
+	<div class="login">
+		<form class="form-horizontal">
+			<fieldset>
+				<input type="text" class="search-query" ng-model="username" placeholder="Username">
+				<input type="password" class="search-query" ng-model="password" placeholder="Password">
+				<a href="#"><p class="help-block">Forgot your password?</p></a>
+				<button class="btn btn-lg btn-success" type="submit" ng-click="validateUser()">Login</button>
+			</fieldset>
+		</form>
+	</div>
 </div>

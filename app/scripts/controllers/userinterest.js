@@ -11,6 +11,7 @@ angular.module('someJamAppApp')
         $location.path("user/eventdetails/"+id);
     }
 	$scope.interests = [];
+	$scope.targetInterest = null;
 	
 	if(UserSession.data != null) {
 		for(var i = 0; i < UserSession.data.interests.length; i++) {
@@ -30,6 +31,10 @@ angular.module('someJamAppApp')
 		    	
 		    });
 		}
+	}
+
+	$scope.interestClicked = function(target) {
+		$scope.targetInterest = target._id;
 	}
 
 
