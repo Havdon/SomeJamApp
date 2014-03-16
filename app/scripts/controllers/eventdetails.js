@@ -2,12 +2,8 @@
 
 
 angular.module('someJamAppApp')
-<<<<<<< HEAD
   .controller('EventdetailsCtrl', function ($scope, $http, $routeParams, $location, UserSession) {
-=======
-  .controller('EventdetailsCtrl', function ($scope, $http, $routeParams) {
->>>>>>> origin/master
-      
+
       $scope.participants = "";
       
       $scope.eventUserIds = [];
