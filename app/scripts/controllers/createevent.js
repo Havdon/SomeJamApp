@@ -26,7 +26,6 @@ angular.module('someJamAppApp')
             url: '/api/event/new',
             data: {name:$scope.name, date:$scope.date, description:$scope.description, interest:$scope.interestId}
         }).success(function(eventObj) {
-            alert(eventObj.toString());
             $location.path('/user/interest');
         });
 	}
