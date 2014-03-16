@@ -1,5 +1,7 @@
-
+<div ng-include="'partials/imagehead'" class="imageHeadInclude"></div>
+<div class="main-container">
 <div ng-include="'partials/navbar'"></div>
+<<<<<<< HEAD
 <div class="jumbotron meetups">
 	<h2>Your meetups</h2>
 	<div class="meetup">
@@ -14,5 +16,18 @@
 				<strong>Users attending: </strong><small>{{event.users.length}}</small>
 			</div>
 		</a>
+=======
+	<div class="meetups">
+		<h2>Your meetups</h2>
+		<div class="meetup">
+			<a ng-repeat="event in events" href="#/user/eventdetails/{{event._id}}">
+					<div class="event" ng-hide="containsThisUser(event.users)">
+						<strong class="eventName">{{event.name}}</strong> More >>
+						<br/>
+						<div class="evetDate">{{event.date}}</div>
+					</div>
+				</a>
+		</div>
+>>>>>>> origin/master
 	</div>
 </div>

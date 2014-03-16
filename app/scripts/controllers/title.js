@@ -19,4 +19,23 @@ angular.module('someJamAppApp')
 	    });
   	};
 
+    $scope.doLogin = function() {
+      if($scope.username.length < 3 || $scope.password.length < 3) return;
+      
+      $http({
+            method : 'POST',
+            url : '/api/user/validate',
+            data : {username:$scope.username, password:$scope.password}
+        }).success(function(userData) {
+        if(userData.valid === true && userData.id !== undefined) {
+          UserSession.setId(userData.id);
+          $http.get('/api/user/id/' + userData.id).success(function(data) {
+              UserSession.setDataObject(data);
+              $location.path("user/interest");
+          });
+          
+        }
+      });
+    }
+
   });

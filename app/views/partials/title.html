@@ -1,26 +1,60 @@
 <div class="front-logo">
 
+<div class="loginDiv">
+	<form class="form-inline" >
+		<label>Login: </label>
+		<input ng-keyup="$event.keyCode == 13 ? doLogin() : null" class="input-sm search-query" type="text" ng-model="username" placeholder="Username">
+		<input ng-keyup="$event.keyCode == 13 ? doLogin() : null" class="input-sm search-query" type="password" ng-model="password" placeholder="Password">
+		<label class="forgot">Forgot your password?</label>
+	</form>
+</div>
+
 <div class="row header">
-        <a href="#/"><h1 class="text-center">Getogether</h1></a>
+        <h1><a href="#/"  class="text-center">Getogether</a></h1>
         Find and gather with friends who share your passion.
     </div>
 
 <div class="jumbotron search">
-	<form>
+	<form class="form-search">
 		<fieldset>
-			<input type="text" placeholder="Type in your location...">
-			<button class="search-button btn btn-lg btn-primary btn-block" type="submit" ng-click="searchLocation()">Search</button>
+			<input type="text" class="search-query" placeholder="Type in your location...">
+			<button class="search-button btn btn-lg btn-success btn-block" type="submit" ng-click="searchLocation()">SEARCH</button>
 		</fieldset>
-		<span class="help-block">See what people are interested in your area</span>
 	</form>
 </div>
 
 </div>
 
-<div class="interestContainer">
+<div class="interestContainer" id="results" ng-show="topInterests !== undefined">
+<div class="upper text-center">
+<h1><strong>TOP 5</strong> INTERESTS</h1>
+<h2>in your area</h2>
+</div>
+<div class="lower" >
+	<div class="interestContainer">
+		<div class="interestDiv" ng-repeat="interests in topInterests">
+			<div class="name">{{interests.name}}</div>
+			<div class="interestedIn">
+				<div class="count text-center">{{interests.userCount}}</div>
+				like it
+			</div>
+		</div>
 
-<div class="jumbotron topInterests" id="results" ng-show="topInterests !== undefined">
-	<table class="table">
+		<div class="registerButton">
+			<a href="#/register">
+				<button class="btn btn-lg btn-success signup" type="button">SIGN UP</button>
+			</a>
+			<a href="#/login">
+				<button class="btn btn-lg btn-primary loginBut" type="button">LOG IN</button>
+			</a>
+		</div>
+	</div>
+	
+</div>
+
+<!-- <div class="jumbotron topInterests" id="results" >
+	
+	 <table class="table">
 		<thead>
 		<tr>
 			<th>NAME</th>
@@ -43,5 +77,5 @@
 		</a>
 	</div>
 </div>
-
+ -->
 </div>

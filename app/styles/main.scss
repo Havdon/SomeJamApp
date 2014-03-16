@@ -1,5 +1,7 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+$link-color: #f7931e; /*orange*/
+
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .browsehappy {
@@ -14,10 +16,33 @@ body {
     //padding-top: 20px;
     //padding-bottom: 20px;
 	height: 100%;
+	font-family: 'Source Sans Pro', sans-serif !important;
 }
 
 html {
 	height: 100%;
+
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+input {
+	color: black;
+	padding-right: 10px;
+	padding-left: 10px ;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-bottom: 0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: none;
+
+
+
+	&:focus {
+		outline: none;
+	}
 }
 
 .container  {
@@ -27,6 +52,9 @@ html {
     padding-right: 0px;
 }
 
+
+
+
 .front-logo {
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,17 +62,68 @@ html {
     min-height: 100%;
     background-repeat:no-repeat;
 	background-position: center center;
+
+
+	.loginDiv {
+		float: right;
+		color: white;
+		padding: 10px;
+		.btn {
+			height: 2em;
+			line-height: 2em;
+			padding: 0px 5px;
+		}
+		.search-query {
+			color: black;
+			padding-right: 10px;
+			padding-left: 10px ;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			margin-bottom: 0;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			border: none;
+
+	
+
+			&:focus {
+				outline: none;
+			}
+		}
+		label {
+			padding-right: 1em;
+			
+		}
+		
+		.forgot {
+			padding-left: 1em;
+			padding-right: 0em;
+			font-size: 10px;
+		}
+
+	}
 }
 
 
 .header {
     text-align: center;
     color: #FFFFFF;
-	h1 {
-		text-transform:uppercase;
-		font-weight: bold;
-        color: #f7931e; /*orange*/
-	}
+	font-size: 1.5em;
+
+		h1 {
+			font-weight: bold;
+	        color: #f7931e; /*orange*/
+			font-size: 4em;
+
+			a:hover {
+				text-decoration: none;
+				border-color: none;
+		    	box-shadow: none;
+			}
+		}
+
+
     
     padding-top: 200px;
     
@@ -58,14 +137,48 @@ html {
 
 .search {
     background-color: transparent;
-    max-width: 75%;
+    width: 60%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+
 	input {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
 		float: left;
 		width: 80%;
 		font-size: 2em;
 		margin-right: 2%;
+			border: none;
+
+
+	}
+
+	.btn {
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		font-weight: bold;
+			border: none;
+	}
+
+	.search-query {
+		padding-right: 14px;
+		padding-right: 4px \9;
+		padding-left: 14px;
+		padding-left: 4px \9;
+		margin-bottom: 0;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+
+		&:focus {
+			outline: none;
+		    border-color: #9ecaed;
+		    box-shadow: 0 0 10px #9ecaed;
+
+		}
 	}
 
 	.search-button {
@@ -79,15 +192,83 @@ html {
 }
 
 .interestContainer {
-	padding-top: 10%;
     min-height: 100%;
+    height: 100%;
+
+    .upper {
+    	padding: 2em;
+    	width: 100%;
+    	background-color: white;
+    	strong {
+    		font-weight: 900;
+    	}
+    	h2 {
+    		font-size: 3em;
+    	}
+    	h1 {
+    		font-size: 5em;
+    	}
+    }
+    .lower {
+    	width: 100%;
+    	height: 75%;
+    	background-color: #D7E0DC;
+
+    	.interestContainer {
+    		width: 30%;
+    		margin: 0 auto;
+	    	.interestDiv {
+	    		height:3.5em;
+	    		.name {
+	    			font-size: 3.5em;
+	    			float:left;
+	    			font-weight: 300;
+	    		}
+	    		.interestedIn {
+		    		line-height: 2.3em;
+		    		float: right;
+		    		padding-top: 1.4em;
+		    		.count {
+		    			float: left;
+		    			margin-right: 0.25em;
+		    			font-size: 1.5em;
+		    			line-height: 1.5em;
+		    			height: 1.5em;
+		    			width: 1.5em;
+		    			background-color: #f7931e; /*orange*/
+		    			border-radius: 50%;
+		    		}
+		    	}
+	    		clear:both;
+	    		
+	    	}
+
+	    	.registerButton {
+    			padding-top: 2em;
+				width: 50%;
+				margin: 0 auto;
+	    		.signup {
+	    			float:left;
+	    			border: none;
+					font-weight: bold;
+	    		}
+
+	    		.loginBut {
+	    			float: right;
+	    			border: none;
+					font-weight: bold;
+	    		}
+	    	}
+	    }
+    }
 }
 
 .topInterests {
-    
-    width:400px;
-
     margin: 0 auto;
+    background-color: #D7E0DC;
+
+    
+
 
 	thead th {
 			font-size: 1.2em;
@@ -105,42 +286,109 @@ html {
 	}
 }
 
+.login-container {
+    background-color: #D7E0DC;
+    width: 100%;
+    height: 100%;
+    .header {
+		padding-top: 15%;
+		color: #737373;
+		margin-bottom: 1em;
+    }
+	.login {
+		.search-query {
+			color: black;
+			padding-right: 10px;
+			padding-left: 10px ;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			margin-top: 1em;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			border: none;
 
-.login {
-	width: 50%;
-	margin-left:auto;
-	margin-right:auto;
-	label {
-		width: 20%;
-		margin-top: 1em;
-	}
-	input {
-		width: 80%;
-	}
-	button {
-		margin-top: 1em;
+	
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.help-block {
+			padding-left: 2em;
+		}
+
+		.btn {
+			border: none;
+			font-weight: bold;
+			width: 9em;
+			line-height: 1em;
+		}
+
+		width: 15%;
+		min-width: 200px;
+
+		margin: 0 auto;
+		input {
+			width: 100%;
+		}
+		button {
+			margin-top: 1em;
+		}
 	}
 }
 
 .interests {
-
+	padding: 0;
+	border: 1px solid #ADADAD;
+	h2 {
+		font-size: 3.5em;
+		font-weight: 600;
+		line-height: 1em;
+	}
+	.top {
+		padding: 10px 10px;
+		padding-left: 50px;
+	}
 	.search-box {
 		float: left;
-		width: 90%;
+		width: 45%;
 		font-size: 1.30em;
 		margin-right: 2%;
+		border: 1px solid #ADADAD;
 	}
 
 	.search-button {
 		width: 8%;
 	}
-
+	
 
 	.interest {
+		padding-left: 50px;
+		
+
+
+
 		.name {
 			margin-bottom: 0;
+			font-size: 3em;
+			font-weight: 300;
+			padding: 0.5em 0;
+			float: left;
 		}
 
+		.count {
+			float: right;
+			line-height: 4.7em;
+			font-size: 1.5em;
+			padding-right: 5em;
+		}
+
+		&:hover {
+			background-color: #ADADAD;
+			cursor: pointer;
+		}
 		.info {
 			padding-left: 2em;
 			padding-bottom: 1em;
@@ -156,19 +404,83 @@ html {
 					font-size: 1.32em;
 				}
 
-				&:hover {
-					background-color: #B5B5B5;
-				}
+				
 			}
 
 			.create-event-button {
 			}
 
 		}
-
-		border-bottom-style: dashed;
+		border-bottom-style: solid;
 		border-bottom-width: 1px;
-		border-bottom-color: #B5B5B5;
+		border-bottom-color: #ADADAD;
+		clear: both;
+		overflow: auto;
+	}
+
+	.opened {
+		color: #FF1D25;
+
+		.name {
+			font-weight: 600;
+			text-decoration: underline;
+		}
+
+		.expanded {
+			width: 100%;
+			float: left;
+			a {
+				color: #FF1D25 !important;
+				overflow: auto;
+			}
+			.event {
+				
+				.eventName {
+					font-size: 1.9em;
+					font-weight: 900;
+					text-transform: uppercase;
+					margin-right: 0.25em;
+				}
+
+				.evetDate {
+					font-size: 1.5em;
+					font-size: 1em;
+					font-weight: 300;
+				}
+
+				&:hover {
+					.eventName {
+						text-decoration: underline;
+					}
+				}
+
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+				width: 75%;
+				float: left;
+			}
+
+			padding-bottom: 0.5em;
+			padding-right: 1em;
+
+			.CreateOwn {
+				width: 190px;
+				.btn {
+					margin-top: 10px;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&:hover {
+			background-color: #ffffff;
+			cursor: auto;
+		}
+
+	}
+	.notSelected {
+		color: #B5B5B5;
 	}
 
 	.suggestion {
@@ -181,6 +493,8 @@ html {
 			border-style: none;
 		}
 
+		margin-right: 50px;
+
 		border-style: dashed;
 		border-width: 1px;
 		border-color: #7BB858;
@@ -188,18 +502,69 @@ html {
 	}
 }
 
+.imageHeadInclude {
+	height: 25%;
+	min-height: 200px;
+	.imageHead {
+		width: 100%;
+		height: 100%;
+		background-image:url('../images/front-bg.jpg') ;
+	    background-repeat:no-repeat;
+		background-position: center center;
+
+		.header {
+			padding-top: 1em;
+		}
+	}
+}
+
+
+.main-container {
+	width: 45%;
+	min-width: 800px;
+	margin: 0 auto;
+}
+
+
+
+
 .meetups {
+	padding: 10px 10px;
+	padding-left: 50px;
+	border: 1px solid #ADADAD;
+	h2 {
+		font-size: 3.5em;
+		font-weight: 600;
+		line-height: 1em;
+	}
+		overflow: auto;
 	.meetup {
+		overflow: auto;
 		.event {
-			border-style: solid;
-			border-width: 1px;
-			border-color: #B5B5B5;
-			padding: 0.25em;
-			margin: 1em;
-			.name {
-				text-decoration:underline;
-				font-size: 1.32em;
+			.eventName {
+				font-size: 1.9em;
+				font-weight: 900;
+				text-transform: uppercase;
+				margin-right: 0.25em;
 			}
+
+			.evetDate {
+				font-size: 1.5em;
+				font-size: 1em;
+				font-weight: 300;
+			}
+
+			&:hover {
+				.eventName {
+					text-decoration: underline;
+				}
+			}
+
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			border-bottom: 1px dashed #ADADAD;
+			width: 100%;
+			float: left;
 		}
 	}
 }

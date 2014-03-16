@@ -160,7 +160,7 @@ describe('POST /api/user/add/interest', function() {
 
 
     var postData = {
-        "id": prevUserId,
+        "userId": prevUserId,
         "interestId": prevInterestId
     };
 
@@ -171,6 +171,12 @@ describe('POST /api/user/add/interest', function() {
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
+        // res.body.should.not.equal(undefined);
+        // res.body.should.be.instanceof(Object);
+        // console.log(res.body.error);
+        // res.body.should.not.have.property('success');
+        // res.body.should.have.property('success');
+        // res.body.success.should.equal(true);
         
         done();
       });
@@ -280,7 +286,7 @@ describe('POST /api/user/attend/event', function() {
 
 
     var postData = {
-        "id": prevUserId,
+        "userId": prevUserId,
         "eventId": prevEventId
     };
 
@@ -291,7 +297,7 @@ describe('POST /api/user/attend/event', function() {
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        
+        res.body.should.eql({ success: true });
         done();
       });
   });
@@ -316,6 +322,26 @@ describe('GET /api/event/id/:id', function() {
         res.body.should.have.property('interest');
         res.body.should.have.property('users');
         res.body.users.length.should.equal(1);
+        done();
+      });
+  });
+});
+
+// Check that the events array length has increased to 1 after new event was created
+describe('GET /api/user/id/:id', function() {
+  
+  it('should respond with JSON object', function(done) {
+
+
+    request(app)
+      .get('/api/user/id/' + prevUserId)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.should.be.instanceof(Object);
+        res.body.should.have.property('events');
+        res.body.events.length.should.equal(1);
         done();
       });
   });
