@@ -356,7 +356,6 @@ input {
 		width: 45%;
 		font-size: 1.30em;
 		margin-right: 2%;
-		color: #ADADAD;
 		border: 1px solid #ADADAD;
 	}
 
@@ -494,6 +493,8 @@ input {
 			border-style: none;
 		}
 
+		margin-right: 50px;
+
 		border-style: dashed;
 		border-width: 1px;
 		border-color: #7BB858;
@@ -528,17 +529,42 @@ input {
 
 
 .meetups {
+	padding: 10px 10px;
+	padding-left: 50px;
+	border: 1px solid #ADADAD;
+	h2 {
+		font-size: 3.5em;
+		font-weight: 600;
+		line-height: 1em;
+	}
+		overflow: auto;
 	.meetup {
+		overflow: auto;
 		.event {
-			border-style: solid;
-			border-width: 1px;
-			border-color: #B5B5B5;
-			padding: 0.25em;
-			margin: 1em;
-			.name {
-				text-decoration:underline;
-				font-size: 1.32em;
+			.eventName {
+				font-size: 1.9em;
+				font-weight: 900;
+				text-transform: uppercase;
+				margin-right: 0.25em;
 			}
+
+			.evetDate {
+				font-size: 1.5em;
+				font-size: 1em;
+				font-weight: 300;
+			}
+
+			&:hover {
+				.eventName {
+					text-decoration: underline;
+				}
+			}
+
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			border-bottom: 1px dashed #ADADAD;
+			width: 100%;
+			float: left;
 		}
 	}
 }

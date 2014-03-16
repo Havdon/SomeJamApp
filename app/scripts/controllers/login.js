@@ -24,7 +24,7 @@ angular.module('someJamAppApp')
   	};
 
 
-    $scope.username = "Username";
-    $scope.password = "password";
-    $scope.validateUser();
+    // $scope.username = "Username";
+    // $scope.password = "password";
+    // $scope.validateUser();
 });

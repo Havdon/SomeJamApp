@@ -86,6 +86,7 @@ angular.module('someJamAppApp')
 		        }).success(function(userData) {
 		        	if(userData.success != false) {
 			        	$scope.searchInterest.userCount++;
+			        	$scope.searchInterest.eventObjects = $scope.eventObjects;
 			        	$scope.interests.push($scope.searchInterest);
 						UserSession.data.interests.push($scope.searchInterest._id);
 			        	$scope.interestSearch = '';

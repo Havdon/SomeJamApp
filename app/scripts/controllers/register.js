@@ -10,7 +10,7 @@ angular.module('someJamAppApp')
                 data : {username:$scope.username, password:$scope.password}}).success(function(userData) {
                     
                     if(typeof userData._id !== 'undefined') {
-                        UserSession.setId(userData.id);
+                        UserSession.setId(userData._id);
                     
                         UserSession.setDataObject(userData);
                         $log.log("LocalUser.id = " + UserSession.id);
