@@ -1,14 +1,17 @@
-<div class="jumbotron" ng-controller="EventdetailsCtrl">
+<div ng-include="'partials/imagehead'" class="imageHeadInclude"></div>
+<div class="main-container">
+<div ng-include="'partials/navbar'"></div>
+	<div class="eventDetails">
+	<button class="btn btn-error" ng-click="joinEvent(event._id)" ng-disabled="joinButtonDisabled" ng-model="joinButtonDisabled">Join</button>
+	<h1>{{event.name}}</h1>
+	<p>{{event.description}}</p>
+	<strong> WHEN >> </strong><br/>
+	<p>{{event.date}}</p>
+	<strong> WHERE >> </strong><br/>
+	<p>Helsinki</p>
+	<strong> WHO IS JOINING >> </strong><br/>
+	<p>{{participants}}</p>
+	
 
-<h1>{{event.name}}</h1>
-{{event.description}}</br>
-Location: Helsinki<br/>
-Time: {{event.date}}</br>
-People registered for the event: {{participants}}<br/>
-People may be interested: {{event.interested}}
-{{interest}}
-
-<br/>
-<button ng-disabled="joinButtonDisabled" class="btn btn-primary" ng-click="joinEvent(event._id)">Join</button>
-
+	</div>
 </div>

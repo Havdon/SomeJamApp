@@ -569,6 +569,30 @@ input {
 	}
 }
 
+.eventDetails {
+	padding-left: 50px;
+	padding-right: 50px;
+	h1 {
+		text-transform: uppercase;
+		color: #FF1D25;
+		font-size: 3em;
+		font-weight: 900;
+	}
+
+	p {
+		font-size: 1.3em;
+	}
+
+	strong {
+		font-weight: 900;
+		font-size: 0.8em;
+	}
+
+	.btn {
+		float:right;
+	}
+}
+
 
 .createEvent {
 	.control-group {
