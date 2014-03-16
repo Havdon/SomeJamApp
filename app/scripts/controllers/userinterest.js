@@ -39,9 +39,11 @@ angular.module('someJamAppApp')
 
 
 	$scope.containsThisUser = function(users) {
-		for(i = 0; i < users.length; i++) {
-			if(users[i] === UserSession.id)
-				return true;
+		if(typeof users !== "undefined" && typeof users.length !== "undefined") {
+			for(i = 0; i < users.length; i++) {
+				if(users[i] === UserSession.id)
+					return true;
+			}
 		}
 		return false;
 	}

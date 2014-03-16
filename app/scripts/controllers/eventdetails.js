@@ -5,6 +5,7 @@ angular.module('someJamAppApp')
   .controller('EventdetailsCtrl', function ($scope, $http, $routeParams, $location, UserSession) {
 
       $scope.participants = "";
+      $scope.joinButtonDisabled = true;
       
       $scope.eventUserIds = [];
 
@@ -16,6 +17,7 @@ angular.module('someJamAppApp')
               data: {userId:UserSession.id, eventId:eventId}
           }).success(function(success) {
                $scope.joinButtonDisabled = true;
+               UserSession.data.events.push(eventId);
           });
 
     };
@@ -40,9 +42,15 @@ angular.module('someJamAppApp')
                   
               });
           }
+
+          if(data.users.indexOf(UserSession.id) === -1) {
+              $scope.joinButtonDisabled = false;
+          }
                                                                
             
       });
+
+
       
         
         
