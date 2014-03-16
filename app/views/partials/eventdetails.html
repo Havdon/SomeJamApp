@@ -9,6 +9,6 @@ People may be interested: {{event.interested}}
 {{interest}}
 
 <br/>
-<button class="btn btn-primary" ng-click="joinEvent(event._id)">{{joinButtonStatus}}</button>
+<button ng-disabled="joinButtonDisabled" class="btn btn-primary" ng-click="joinEvent(event._id)">Join</button>
 
 </div>

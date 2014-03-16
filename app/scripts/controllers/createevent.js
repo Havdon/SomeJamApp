@@ -14,7 +14,13 @@ angular.module('someJamAppApp')
 
 
 	$scope.createEvent = function() {
-		
+		$http({
+            method : 'POST',
+            url: '/api/event/new',
+            data: {name:$scope.name, date:$scope.date, description:$scope.description, interest:$scope.interest}
+        }).success(function(eventObj) {
+            $location.path('/user/interest');
+        });
 	}
 	
 });
