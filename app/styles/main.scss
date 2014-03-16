@@ -2,6 +2,9 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 $link-color: #f7931e; /*orange*/
 
+
+$red-color: #BD290B;
+
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .browsehappy {
@@ -419,7 +422,7 @@ input {
 	}
 
 	.opened {
-		color: #FF1D25;
+		color: $red-color;
 
 		.name {
 			font-weight: 600;
@@ -430,7 +433,7 @@ input {
 			width: 100%;
 			float: left;
 			a {
-				color: #FF1D25 !important;
+				color: $red-color !important;
 				overflow: auto;
 			}
 			.event {
@@ -574,7 +577,7 @@ input {
 	padding-right: 50px;
 	h1 {
 		text-transform: uppercase;
-		color: #FF1D25;
+		color: $red-color;
 		font-size: 3em;
 		font-weight: 900;
 	}
@@ -599,6 +602,10 @@ input {
 
 		label {
 			display: block;
+		}
+
+		input {
+			border: 2px inset;
 		}
 
 		.input {
