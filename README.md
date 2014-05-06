@@ -17,10 +17,15 @@ Dependencies:
 Steps to get running:
 
 Step 0: Start local MongoDB at default port
+
 Step 1: clone resp
+
 Step 1.5: cd into folder
+
 Step 2: run 'bower install'
+
 Step 3: run 'npm install'
+
 Step 4: run 'bower serve' to launch localy
 
 
