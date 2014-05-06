@@ -6,6 +6,7 @@ Demo: http://somejam.herokuapp.com/
 For a short description of the project:<br/>
 http://blogs.helsinki.fi/app-ideas/2014/03/18/team-getogether/
 
+The application is not fully functional, things like location awarness are faked.
 
 
 ###Dependencies:###
