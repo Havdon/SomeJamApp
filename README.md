@@ -3,6 +3,7 @@ Base app in preperation for SomeJam (Helsinki 14 March 2014)
 
 
 Dependencies:
+
 	- NodeJs
 		- Bower
 		- Grunt
