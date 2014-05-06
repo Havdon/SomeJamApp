@@ -15,6 +15,7 @@ Dependencies:
 
 
 Steps to get running:
+
 	1. Start local MongoDB at default port¨
 	2. Clone respetory
 	3. Move into directory
